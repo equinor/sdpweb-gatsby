@@ -17,7 +17,7 @@ const Header = ({ siteTitle }) => (
         padding: `1.45rem 1.0875rem`,
       }}
     >
-      <H2 style={{ margin: 0}}>
+      <H2 style={{ margin: 0 }}>
         <Link
           to="/"
           style={{

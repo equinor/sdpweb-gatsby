@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-import { H2 } from "../components/headers"
+import { H3 } from "../components/headers"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Card from "../components/Card"
@@ -12,31 +12,30 @@ const CardsWrapper = styled.div`
   padding: 15px 0;
   display: flex;
   flex-flow: wrap;
+  justify-content: space-around;
 `
 
 const InfoCard = styled.div`
-    background: #f8f8f8;
-    padding: 2em;
-    display: flex;
-    flex-direction: column;
-    border: #d5dada solid 1px;
-    margin: 10px;
-    height: fit-content;
-    max-width: 600px;
-    font-family: Equinor-Regular, sans-serif;
+  background: #f8f8f8;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  border: #d5dada solid 1px;
+  margin: 10px;
+  height: fit-content;
+  max-width: 600px;
+  font-family: Equinor-Regular, sans-serif;
 `
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home"/>
-    <InfoCard>
-      <p>
-        We're here to make your day as a developer or researcher in Equinor
-        better. We provide software development tools which you can use with
-        your project to work better and more efficient. Below you'll find the
-        tools and services we provide.
-      </p>
-    </InfoCard>
+    <p style={{ padding: "50px", fontFamily: "Equinor-Italic", lineHeight: "1.5", fontSize: "22px"}}>
+      We're here to make your day as a developer or researcher in Equinor
+      better. We provide software development tools which you can use with
+      your project to work better and more efficient. Below you'll find the
+      tools and services we provide.
+    </p>
     <CardsWrapper>
       <Card title="Github" image="/github.png">
         <p>
@@ -46,8 +45,8 @@ const IndexPage = () => (
           of Git as well as adding its own features. It provides access control
           and several collaboration features such as bug tracking, feature
           requests, task management, and wikis for every project.
-          <Link to="/github/"> Follow the instructions here</Link> to get started
-          with GitHub.
+          <Link to="/github/"> Follow the instructions here</Link> to get
+          started with GitHub.
         </p>
       </Card>
       <Card title="Gitlab" image="/gitlab.png">
@@ -57,7 +56,11 @@ const IndexPage = () => (
           server. Gitlab gives you complete control over your repositories or
           projects. This Gitlab server is hosted <strong>internally</strong> and
           is based on the community edition.
-          <a target="_blank" href="https://docs.gitlab.com/ce/user/index.html">
+          <a
+            target="_blank"
+            href="https://docs.gitlab.com/ce/user/index.html"
+            rel="noreferrer"
+          >
             Read the user documentation for Gitlab here
           </a>
         </p>
@@ -69,6 +72,33 @@ const IndexPage = () => (
           aspects of continuous delivery. It supports version control tools such
           as Git, Subversion, etc. We offer various instances of Jenkins.
           <Link to="/jenkins/"> Read more about Jenkins instances here</Link>
+        </p>
+      </Card>
+      <Card title="Wikidocs" image="/wiki.png">
+        <p>
+          Wikidocs is a network-share to host files too big for the mediawiki
+          serving 'wiki.statoil.no'. To upload files to this share, apply for
+          the /project/sdpdocs - sdpusers (MidtNorge) at accessIT. The wikidocs
+          area can be accessed like this;
+          <p>
+            Linux server:
+            <br/>
+            <code>cd /project/sdpdocs</code>
+          </p>
+          <p>
+            {" "}
+            Windows:
+            <br/>
+            <ol>
+              <li>
+                Start <i>Windows Explorer</i>
+                <br/>
+              </li>
+              <li>
+                Navigate to <code>\\statoil.net\unix_tr\Project\sdpdocs\</code>
+              </li>
+            </ol>
+          </p>
         </p>
       </Card>
       <Card title="NPM Repository" image="/npm.png">
@@ -85,14 +115,6 @@ const IndexPage = () => (
           the instructions <Link to="/npm">here</Link>
         </p>
       </Card>
-      <Card title="Jira Cloud" image="/jira.png">
-        <p>
-          Jira is a proprietary issue tracking product, developed by Atlassian.
-          It provides bug tracking, issue tracking, and project management
-          functions. <Link to="/jira_cloud">Follow the instructions here </Link>
-          to get started with Jira Cloud
-        </p>
-      </Card>
       <Card title="SDPSoft" image="/sdp.png">
         <p>
           SDPSoft is a collection of compiled software available for all
@@ -104,34 +126,44 @@ const IndexPage = () => (
           </a>
         </p>
       </Card>
-      <Card title="Wikidocs" image="/wiki.png">
+      <Card title="Jira Cloud" image="/jira.png">
         <p>
-          Wikidocs is a network-share to host files too big for the mediawiki
-          serving 'wiki.statoil.no'. To upload files to this share, apply for
-          the /project/sdpdocs - sdpusers (MidtNorge) at accessIT. The wikidocs
-          area can be accessed like this;
-          <p>Linux server:<br/>
-            <code>cd /project/sdpdocs</code></p>
-          <p> Windows:<br/>
-            <ol>
-              <li>Start <i>Windows Explorer</i><br/></li>
-              <li>Navigate to <code>\\statoil.net\unix_tr\Project\sdpdocs\</code></li>
-            </ol>
-          </p>
+          Jira is a proprietary issue tracking product, developed by Atlassian.
+          It provides bug tracking, issue tracking, and project management
+          functions. <Link to="/jira_cloud">Follow the instructions here </Link>
+          to get started with Jira Cloud
         </p>
       </Card>
     </CardsWrapper>
     <InfoCard>
-      <H2>Contact Us</H2>
-      <p>Need to order some IT related services for Equinor R&T?</p>
-      <p>Compile stuff? Software development? Infrastructure? Advisory? And more...</p>
-      <p>We prefer being contacted on Slack in the <a target="_blank"
-                                                       href="https://statoil.slack.com/messages/C02JJGV05">#sdpteam </a>
-        channel</p>
-      <p>You can also send us an email: <a href="mailto:gm_sds_rdi@equinor.com">gm_sds_rdi@equinor.com</a></p>
-      <p>ServiceNow can also be used: <a target="_blank"
-                                         href="https://statoil.service-now.com/selfservice?id=sc_cat_item&sys_id=78bfbbce6fb455001f6446916e3ee453">Services@Equinor
-        Equinor's R&T Toolbox</a></p>
+      <H3>Contact Us</H3>
+      <p style={{ lineHeight: "1.5" }}>
+        Need to order some IT related services for Equinor R&T?<br/>
+        Compile stuff? Software development? Infrastructure? Advisory? And
+        more...<br/>
+        We prefer being contacted on Slack in the{" "}
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://statoil.slack.com/messages/C02JJGV05"
+        >
+          #sdpteam{" "}
+        </a>
+        channel <br/>
+        You can also send us an email:{" "}
+        <a href="mailto:gm_sds_rdi@equinor.com" rel="noreferrer">
+          gm_sds_rdi@equinor.com
+        </a>
+        <br />
+        ServiceNow can also be used:{" "}
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://statoil.service-now.com/selfservice?id=sc_cat_item&sys_id=78bfbbce6fb455001f6446916e3ee453"
+        >
+          Services@Equinor Equinor's R&T Toolbox
+        </a>
+      </p>
     </InfoCard>
   </Layout>
 )

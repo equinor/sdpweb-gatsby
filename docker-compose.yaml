@@ -1,0 +1,10 @@
+
+version: "3.4"
+
+services:
+  sdpweb:
+    build:
+      context: .
+    image: sdpequinor/sdpweb-gatsby
+    ports:
+      - "80:9000"

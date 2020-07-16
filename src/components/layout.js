@@ -12,7 +12,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import "./layout.css"
 import "../styles/fonts.css"
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components"
 
 const GlobalStyles = createGlobalStyle`
   body {
@@ -36,11 +36,11 @@ const Layout = ({ children }) => {
       <div
         style={{
           margin: `0 auto`,
-          maxWidth: 1600,
+          maxWidth: 1200,
           padding: `0 1.0875rem 1.45rem`,
         }}
       >
-        <GlobalStyles/>
+        <GlobalStyles />
         <main
           style={{
             display: "flex",
@@ -50,8 +50,7 @@ const Layout = ({ children }) => {
         >
           {children}
         </main>
-        <footer>
-        </footer>
+        <footer/>
       </div>
     </>
   )
