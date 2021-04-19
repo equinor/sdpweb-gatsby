@@ -36,18 +36,6 @@ const SDPPage = () => (
           provide our compiled software to the people. SDPSoft is available on
           all the Equinor offices around the world.
         </p>
-        <p>
-          SDPSoft is a collection of compiled software stored under{" "}
-          <strong>/prog/sdpsoft</strong> for all Statoil Linux servers that have
-          the "official" NFS-share mounted. SDPSoft exists because people need
-          various types of software and new versions of software which is
-          neither available in RedHat's yum repos nor Statoil yum repos. Also,
-          instead of having to deal with yum repos and packages that needs to be
-          installed and/or updated on all servers in Statoil (which SDPTeam have
-          no responsiblity for), we use the NFS-share as an easy alternative to
-          provide our compiled software to the people. SDPSoft is available on
-          all the Statoil offices around the world.
-        </p>
         <Code>
           Only use SDPSoft in development environment. Do not use in production!
           For production use{" "}
