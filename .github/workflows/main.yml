@@ -12,6 +12,6 @@ jobs:
       - name: Pull latest
         run: docker pull ghcr.io/equinor/sdpweb-gatsby:main
       - name: Build
-        run: docker build . --tag ghcr.io/equinor/sdpweb-gatsby:main --cache-from ghcr.io/equinor/sdpweb-gatsby:main
+        run: docker build . --tag ghcr.io/equinor/sdpweb-gatsby:main --tag ghcr.io/equinor/sdpweb-gatsby:$(git rev-parse --short HEAD) --cache-from ghcr.io/equinor/sdpweb-gatsby:main
       - name: Push
         run: docker push ghcr.io/equinor/sdpweb-gatsby:main
